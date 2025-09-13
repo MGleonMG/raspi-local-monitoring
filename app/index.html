@@ -9,10 +9,14 @@
 
 <body>
     <div class="card">
-        <h1>Raspberry Pi Service Status</h1>
-        <p>Ping: <span id="ping">⏳ Checking...</span></p>
-        <p>Webserver: <span id="web">⏳ Checking...</span></p>
-        <p>SSH: <span id="ssh">⏳ Checking...</span></p>
+        <h1>Network Monitoring</h1>
+        <div class="last-checked" id="last-checked"></div>
+
+        <p>Ping - Router: <span id="ping-router">⏳ Checking...</span></p>
+        <p>Ping - Switch: <span id="ping-switch">⏳ Checking...</span></p>
+        <p>Ping - AP#1: <span id="ping-ap-1">⏳ Checking...</span></p>
+        <p>Ping - AP#2: <span id="ping-ap-2">⏳ Checking...</span></p>
+        <p>Ping - Cloudflare: <span id="ping-dns">⏳ Checking...</span></p>
         <p id="error" style="color: #ff4d4d;"></p>
     </div>
 

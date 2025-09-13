@@ -4,23 +4,30 @@ async function updateStatus() {
         const res = await fetch("http://192.168.2.104:3000/status");
         const data = await res.json();
 
-        // Update Ping
-        document.getElementById("ping").innerHTML =
-            data.ping ? "<span class='ok'>✅ Reachable</span>"
-                : "<span class='fail'>❌ Down</span>";
+        const now = new Date();
+        const formatted = now.toLocaleDateString("en-GB") + " " + now.toLocaleTimeString("en-GB");
+        document.getElementById("last-checked").textContent = "Last checked: " + formatted;
 
-        // Update Webserver
-        document.getElementById("web").innerHTML =
-            data.web ? "<span class='ok'>✅ Running</span>"
-                : "<span class='fail'>❌ Down</span>";
+        document.getElementById("error").textContent = "";
 
-        // Update SSH
-        document.getElementById("ssh").innerHTML =
-            data.ssh ? "<span class='ok'>✅ Open</span>"
-                : "<span class='fail'>❌ Closed</span>";
+        // Update Pingchecks
+        document.getElementById("ping-router").innerHTML =
+            data.router ? "<span class='ok'>✅ Reachable</span>" : "<span class='fail'>❌ Unreachable</span>";
+
+        document.getElementById("ping-switch").innerHTML =
+            data.switch ? "<span class='ok'>✅ Reachable</span>" : "<span class='fail'>❌ Unreachable</span>";
+
+        document.getElementById("ping-ap-1").innerHTML =
+            data.ap1 ? "<span class='ok'>✅ Reachable</span>" : "<span class='fail'>❌ Unreachable</span>";
+
+        document.getElementById("ping-ap-2").innerHTML =
+            data.ap2 ? "<span class='ok'>✅ Reachable</span>" : "<span class='fail'>❌ Unreachable</span>";
+
+        document.getElementById("ping-dns").innerHTML =
+            data.dns ? "<span class='ok'>✅ Reachable</span>" : "<span class='fail'>❌ Unreachable</span>";
+
 
         // Clear error message
-        document.getElementById("error").textContent = "";
 
     } catch (err) {
         console.error("Fetch error:", err);
@@ -28,6 +35,7 @@ async function updateStatus() {
     }
 }
 
-// Run once immediately, then every 5s
+// Run once immediately, then every 10s for devving
+// TODO: extend interval time later
 updateStatus();
-setInterval(updateStatus, 5000);
+setInterval(updateStatus, 10000);

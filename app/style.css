@@ -10,6 +10,10 @@ h1 {
     color: #00ff99;
 }
 
+.last-checked {
+    color: lightgray;
+}
+
 .card {
     background-color: #1e1e1e;
     padding: 20px;
