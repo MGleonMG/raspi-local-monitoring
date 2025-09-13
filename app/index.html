@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="card">
+        <h1>Raspberry Pi Service Status</h1>
+        <p>Ping: <span id="ping">⏳ Checking...</span></p>
+        <p>Webserver: <span id="web">⏳ Checking...</span></p>
+        <p>SSH: <span id="ssh">⏳ Checking...</span></p>
+        <p id="error" style="color: #ff4d4d;"></p>
+    </div>
+
+    <script src="monitorInterval.js"></script>
+
+</body>
+
+</html>
