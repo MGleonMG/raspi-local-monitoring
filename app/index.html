@@ -10,14 +10,18 @@
 <body>
     <div class="card">
         <h1>Network Monitoring</h1>
-        <div class="last-checked" id="last-checked"></div>
+        <div class="last-checked" id="last-checked">
+            <p>Ping - Router: <span id="ping-router">⏳ Checking...</span></p>
+            <p>Ping - Switch: <span id="ping-switch">⏳ Checking...</span></p>
+            <p>Ping - AP#1: <span id="ping-ap-1">⏳ Checking...</span></p>
+            <p>Ping - AP#2: <span id="ping-ap-2">⏳ Checking...</span></p>
+            <p>Ping - Cloudflare: <span id="ping-dns">⏳ Checking...</span></p>
+            <p id="error" style="color: #ff4d4d;"></p>
+        </div>
 
-        <p>Ping - Router: <span id="ping-router">⏳ Checking...</span></p>
-        <p>Ping - Switch: <span id="ping-switch">⏳ Checking...</span></p>
-        <p>Ping - AP#1: <span id="ping-ap-1">⏳ Checking...</span></p>
-        <p>Ping - AP#2: <span id="ping-ap-2">⏳ Checking...</span></p>
-        <p>Ping - Cloudflare: <span id="ping-dns">⏳ Checking...</span></p>
-        <p id="error" style="color: #ff4d4d;"></p>
+        <div class="last-checked" id="last-checked">
+            <p>Last WAN speed: <span id="...">⏳ Checking...</span></p>
+        </div>
     </div>
 
     <script src="monitorInterval.js"></script>
