@@ -10,7 +10,6 @@ async function updateStatus() {
 
         document.getElementById("error").textContent = "";
 
-        // Update Pingchecks
         document.getElementById("ping-router").innerHTML =
             data.router ? "<span class='ok'>✅ Reachable</span>" : "<span class='fail'>❌ Unreachable</span>";
 
@@ -28,9 +27,6 @@ async function updateStatus() {
 
         document.getElementById("service-unifi").innerHTML =
             data.dns ? "<span class='ok'>✅ Up and Running</span>" : "<span class='fail'>❌ Down</span>";
-
-
-        // Clear error message
 
     } catch (err) {
         console.error("Fetch error:", err);
