@@ -25,6 +25,7 @@ function ping(ip) {
   });
 }
 
+//TODO: implement services plus wan speed checks
 app.get("/status", async (req, res) => {
   const results = {};
   for (const [name, ip] of Object.entries(devices)) {

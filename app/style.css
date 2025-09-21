@@ -10,7 +10,11 @@ h1 {
     color: #00ff99;
 }
 
-.last-checked {
+.pings-and-services {
+    color: lightgray;
+}
+
+.wan-speed-checks {
     color: lightgray;
 }
 
