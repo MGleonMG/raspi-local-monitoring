@@ -26,6 +26,9 @@ async function updateStatus() {
         document.getElementById("ping-dns").innerHTML =
             data.dns ? "<span class='ok'>✅ Reachable</span>" : "<span class='fail'>❌ Unreachable</span>";
 
+        document.getElementById("service-unifi").innerHTML =
+            data.dns ? "<span class='ok'>✅ Up and Running</span>" : "<span class='fail'>❌ Down</span>";
+
 
         // Clear error message
 
@@ -35,7 +38,5 @@ async function updateStatus() {
     }
 }
 
-// Run once immediately, then every 10s for devving
-// TODO: extend interval time later
 updateStatus();
 setInterval(updateStatus, 10000);

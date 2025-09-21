@@ -14,6 +14,9 @@ const devices = {
   dns: "1.1.1.1"
 };
 
+const services = [""]
+//TODO: add unifi, pihole, samba, ..?
+
 function ping(ip) {
   return new Promise((resolve) => {
     exec(`ping -c 1 -W 1 ${ip}`, (error, stdout, stderr) => {
